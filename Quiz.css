@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #f5efe6;
+  background:pink;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,14 +48,15 @@ body {
   border: 2px solid #eadbc8;
   background: black;
   cursor: pointer;
+  font-size:15;
 }
 
 .answer-btn.correct {
-  background: #c8f7c5;
+  background:green;
 }
 
 .answer-btn.incorrect {
-  background: #f7c5c5;
+  background: red;
 }
 
 .progress-bar {

@@ -15,48 +15,48 @@ const progressBar = document.getElementById("progress");
 
 const quizQuestions = [
   {
-    question: "What is the capital of France?",
+    question: "Which Memory is Fastest?",
     answers: [
-      { text: "London", correct: false },
-      { text: "Berlin", correct: false },
-      { text: "Paris", correct: true },
-      { text: "Madrid", correct: false }
+      { text: "RAM", correct: false },
+      { text: "ROM", correct: false },
+      { text: "Hard Disk", correct: false },
+      { text: "Cache Memory", correct: true}
     ]
   },
   {
-    question: "Which planet is known as the Red Planet?",
+    question: "CPU Stands For?",
     answers: [
-      { text: "Venus", correct: false },
-      { text: "Mars", correct: true },
-      { text: "Jupiter", correct: false },
-      { text: "Saturn", correct: false }
+      { text: "control processing unit", correct: false },
+      { text: "central processing unit", correct: true },
+      { text: "computer personal unit", correct: false },
+      { text: "common private unit", correct: false }
     ]
   },
   {
-    question: "Largest ocean?",
+    question: "Which Memory is Temporary?",
     answers: [
-      { text: "Atlantic", correct: false },
-      { text: "Indian", correct: false },
-      { text: "Pacific", correct: true },
-      { text: "Arctic", correct: false }
+      { text: "RAM", correct: true },
+      { text: "ROM", correct: false },
+      { text: "PenDrive", correct: false },
+      { text: "Hard Disk", correct: false }
     ]
   },
   {
-    question: "Which is NOT a language?",
+    question: "Which Component Performs Arithmetic and Logical Operations?",
     answers: [
-      { text: "Java", correct: false },
-      { text: "Python", correct: false },
-      { text: "Banana", correct: true },
-      { text: "JS", correct: false }
+      { text: "Contro unit", correct: false },
+      { text: "Register", correct: false },
+      { text: "ALU", correct: true },
+      { text: "Cache", correct: false }
     ]
   },
   {
-    question: "Symbol of gold?",
+    question: "RAM stands for?",
     answers: [
-      { text: "Ag", correct: false },
-      { text: "Au", correct: true },
-      { text: "Gd", correct: false },
-      { text: "Go", correct: false }
+      { text: "Read Access Memory", correct: false },
+      { text: "Random Access Memory", correct: true },
+      { text: "Rapid Action Memory", correct: false },
+      { text: "Read And Modify", correct: false }
     ]
   }
 ];
@@ -94,7 +94,7 @@ function showQuestion() {
   q.answers.forEach(ans => {//function(ans)//showing all answers
     const btn = document.createElement("button");//dynamic btn crtion
     btn.textContent = ans.text;//set btn txt
-    btn.classList.add("answer-btn");//add answe-btn styles to btn
+    btn.classList.add("answer-btn");//add answer-btn styles to btn
     btn.onclick = () => checkAnswer(ans.correct, btn);//all answers on by one .correct
     answersContainer.appendChild(btn)
   });
@@ -109,7 +109,7 @@ function checkAnswer(correct, button) {//passing btn bcz which button the user c
     button.classList.add("incorrect");
   }
 
-  setTimeout(() => {// when user click we show red or grren for a short moment afetr it goes to n ext qus autoamticly
+  setTimeout(() => {// when user click we show red or green for a short moment after it goes to n  questions autoamtically
     currentQuestionIndex++;
     if (currentQuestionIndex < quizQuestions.length) {
       showQuestion();
